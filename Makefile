@@ -20,7 +20,12 @@ DEPSDIR = includes/
 DEPS = $(addprefix $(DEPSDIR),\
 	   ft.h)
 LIBFILES = $(addprefix $(SRCSDIR),\
-		ft_putchar.c)
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_atoi.c \
+		ft_init.c \
+		ft_obvious_case.c \
+		ft_solve.c)
 LIBOBJ = $(LIBFILES:%.c=%.o)
 FILES = $(addprefix $(SRCSDIR),\
 		main.c)

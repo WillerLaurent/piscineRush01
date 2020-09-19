@@ -14,7 +14,13 @@
 # define FT_H
 
 # include <unistd.h>
+# define N 4
 
-void	ft_putchar(char *str);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+char	**ft_init(int argc, char **argv);
+void	ft_obvious_case(char **tab);
+void	ft_solve(char **tab);
+int		ft_atoi(char *str);
 
 #endif
