@@ -9,7 +9,7 @@ int		ft_count_colup(char **tab, int j)
 	i = 0;
 	max = tab[i + 1][j];
 	res = (max != 0);
-	while (++i < 5)
+	while (++i < N + 1)
 		if (tab[i][j] && tab[i][j] > max)
 		{
 			res++;
@@ -24,7 +24,7 @@ int		ft_count_coldown(char **tab, int j)
 	int	max;
 	int	res;
 
-	i = 5;
+	i = N + 1;
 	max = tab[i - 1][j];
 	res = (max != 0);
 	while (--i > 0)
@@ -42,7 +42,7 @@ int		ft_count_rowright(char **tab, int i)
 	int	max;
 	int	res;
 
-	j = 5;
+	j = N + 1;
 	max = tab[i][j - 1];
 	res = (max != 0);
 	while (--j > 0)
@@ -63,7 +63,7 @@ int		ft_count_rowleft(char **tab, int i)
 	j = 0;
 	max = tab[i][j + 1];
 	res = (max != 0);
-	while (++j < 5)
+	while (++j < N + 1)
 		if (tab[i][j] && tab[i][j] > max)
 		{
 			res++;
