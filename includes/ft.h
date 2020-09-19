@@ -6,7 +6,7 @@
 /*   By: gartaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:31:31 by gartaud           #+#    #+#             */
-/*   Updated: 2020/09/15 16:42:09 by gartaud          ###   ########lyon.fr   */
+/*   Updated: 2020/09/19 17:12:06 by lwiller          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # define N 4
 
 void	ft_putchar(char c);

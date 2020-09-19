@@ -6,7 +6,7 @@
 /*   By: gartaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:04:52 by gartaud           #+#    #+#             */
-/*   Updated: 2020/09/17 20:50:07 by gartaud          ###   ########lyon.fr   */
+/*   Updated: 2020/09/19 17:32:31 by lwiller          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,4 @@ int	ft_atoi(char *str)
 	while (ft_is_numeric(*str))
 		res = res * 10 + (*str++) - '0';
 	return (sgn * res);
-}
-#include <stdio.h>
-int main()
-{
-	printf("%d\n", ft_atoi("-2147483648"));
 }
