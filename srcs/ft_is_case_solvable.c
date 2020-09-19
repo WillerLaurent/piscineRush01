@@ -19,14 +19,14 @@ int		ft_is_case_solvable(char **tab)
 
 	i = 1;
 	y = 1;
-	while (y < N + 2)
+	while (y < N + 1)
 	{
 		if (!(tab[y][0] + tab[y][N + 1] >= 3 &&
 					tab[y][0] + tab[y][N + 1] <= N + 1))
 			return (0);
 		y++;
 	}
-	while (i < N + 2)
+	while (i < N + 1)
 	{
 		if (!(tab[0][i] + tab[N + 1][i] >= 3 &&
 					tab[0][i] + tab[N + 1][i] <= N + 1))

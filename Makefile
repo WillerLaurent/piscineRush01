@@ -28,7 +28,8 @@ LIBFILES = $(addprefix $(SRCSDIR),\
 		ft_solve.c \
 		ft_count.c \
 		ft_putsol.c \
-		ft_is_case_solvable.c)
+		ft_is_case_solvable.c \
+		ft_putnbr.c)
 LIBOBJ = $(LIBFILES:%.c=%.o)
 FILES = $(addprefix $(SRCSDIR),\
 		main.c)

@@ -20,6 +20,7 @@
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
 char	**ft_init(int argc, char **argv);
 int		ft_obvious_case(char **tab);
 int		ft_solve(char **tab, int move_left);
