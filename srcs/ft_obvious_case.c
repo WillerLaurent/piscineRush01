@@ -27,15 +27,14 @@ void	ft_obvious_case_rowleft(char **tab)
 			{
 				while (tab[y][i + 1] != 0)
 					i++;
-				tab[y][i + 1] = i + 1;
+				if (i < 4)
+					tab[y][i + 1] = i + 1;
 				i++;
 			}
 		}
 		i = 0;
-		if (tab[y][i] == 1 && tab[y][i + 1] != 0)
+		if (tab[y][i] == 1 && tab[y][i + 1] == 0)
 			tab[y][i + 1] = 4;
-		if (tab[y][i] == 3 && tab[y][i + 3] != 0)
-			tab[y][i + 3] = 4;
 		y++;
 	}
 }
@@ -53,17 +52,16 @@ void	ft_obvious_case_colup(char **tab)
 		{
 			while (y < 4)
 			{
-				while (tab[y + 1][i] != 0)
+				while (y < 4 && tab[y + 1][i] != 0)
 					y++;
-				tab[y + 1][i] == y + 1;
+				if (y < 4)
+					tab[y + 1][i] = y + 1;
 				y++;
 			}
 		}
 		y = 0;
-		if (tab[y][i] == 1 && tab[y + 1][i] != 0)
+		if (tab[y][i] == 1 && tab[y + 1][i] == 0)
 			tab[y + 1][i] = 4;
-		if (tab[y][i] == 3 && tab[y + 3][i] != 0)
-			tab[y + 3][i] = 4;
 		i++;
 	}
 }
@@ -83,15 +81,14 @@ void	ft_obvious_case_rowright(char **tab)
 			{
 				while (tab[y][i - 1] != 0)
 					i--;
-				tab[y][i - 1] = i - 1;
+				if (i > 1)
+					tab[y][i - 1] = i - 1;
 				i--;
 			}
 		}
-		i == 5;
-		if ((tab[y][i] == 1) && tab[y][i - 1] != 0)
+		i = 5;
+		if ((tab[y][i] == 1) && tab[y][i - 1] == 0)
 			tab[y][i - 1] = 4;
-		if (tab[y][i] == 3 && tab[y][i - 3] != 0)
-			tab[y][i - 3] = 4;
 		y++;
 	}
 }
@@ -111,20 +108,19 @@ void	ft_obvious_case_coldown(char **tab)
 			{
 				while (tab[y - 1][i] != 0)
 					y--;
-				tab[y - 1][i] == y - 1;
+				if (y > 1)
+					tab[y - 1][i] = y - 1;
 				y--;
 			}
 		}
 		y = 5;
-		if (tab[y][i] == 1 && tab[y - 1][i] != 0)
+		if (tab[y][i] == 1 && tab[y - 1][i] == 0)
 			tab[y - 1][i] = 4;
-		if (tab[y][i] == 3 && tab[y - 3][i] != 0)
-			tab[y - 3][i] = 4;
 		i++;
 	}
 }
 
-int		ft_obvious_case(cahr **tab)
+int		ft_obvious_case(char **tab)
 {
 	int		a;
 	int		i;
@@ -132,8 +128,16 @@ int		ft_obvious_case(cahr **tab)
 
 	i = 1;
 	y = 1;
+	a = 0;
+	if (!ft_is_case_solvable(tab))
+		return (-1);
+	ft_obvious_case_coldown(tab);
+	ft_obvious_case_colup(tab);
+	ft_obvious_case_rowleft(tab);
+	ft_obvious_case_rowright(tab);
 	while (y < 5)
 	{
+		i = 1;
 		while (i < 5)
 		{
 			if (tab[y][i] == 0)

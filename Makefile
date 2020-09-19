@@ -6,11 +6,11 @@
 #    By: gartaud <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/15 16:17:02 by gartaud           #+#    #+#              #
-#    Updated: 2020/09/15 18:53:44 by gartaud          ###   ########lyon.fr    #
+#    Updated: 2020/09/19 17:51:22 by gartaud          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = ft_cat
+EXEC = rush01
 LIBNAME = includes/libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -25,7 +25,10 @@ LIBFILES = $(addprefix $(SRCSDIR),\
 		ft_atoi.c \
 		ft_init.c \
 		ft_obvious_case.c \
-		ft_solve.c)
+		ft_solve.c \
+		ft_count.c \
+		ft_putsol.c \
+		ft_is_case_solvable.c)
 LIBOBJ = $(LIBFILES:%.c=%.o)
 FILES = $(addprefix $(SRCSDIR),\
 		main.c)
