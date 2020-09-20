@@ -30,39 +30,29 @@
 ** "2 2 1 2 1 3 3 1 2 1 2 2"
 */
 
+int	ft_error(void)
+{
+	ft_putstr("Error\n");
+	return (-1);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**tab;
 	int		moves_left;
 
 	if (!ft_parcer(argc, argv))
-	{
-		ft_putstr("Error");
-		return (-1);
-	}
-
+		return (ft_error());
 	tab = ft_init(argc, argv);
 	if (tab == 0)
-	{
-		ft_putstr("Error\n");
-		return (-1);
-	}
-
-
+		return (ft_error());
 	moves_left = ft_obvious_case(tab);
 	if (moves_left == -1)
-	{
-		ft_putstr("Error\n");
-		return (-1);
-	}
-
-
+		return (ft_error());
 	if (ft_solve(tab, moves_left))
 	{
 		ft_putsol(tab);
 		return (0);
 	}
-
-	ft_putstr("Error\n");
-	return (-1);
+	return (ft_error());
 }
