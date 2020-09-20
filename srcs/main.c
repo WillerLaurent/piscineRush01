@@ -6,7 +6,7 @@
 /*   By: gartaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:34:11 by gartaud           #+#    #+#             */
-/*   Updated: 2020/09/20 15:52:15 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 18:15:35 by lwiller          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int	main(int argc, char **argv)
 	char	**tab;
 	int		moves_left;
 
+		if (!ft_parcer(argc, argv))
+	{
+		ft_putstr("Error");
+		return (-1);
+	}
 	tab = ft_init(argc, argv);
 	ft_putstr("\n===== INIT =====\n\n");
 	ft_putsol(tab);
