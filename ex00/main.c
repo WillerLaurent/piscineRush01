@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft.h"
 
 /*
 ** SOLVABLE 7*7 GRID (Timeout)
@@ -30,9 +30,10 @@
 ** "2 2 1 2 1 3 3 1 2 1 2 2"
 */
 
-int	ft_error(void)
+int	ft_error(char **tab)
 {
 	ft_putstr("Error\n");
+	free(tab);
 	return (-1);
 }
 
@@ -41,18 +42,22 @@ int	main(int argc, char **argv)
 	char	**tab;
 	int		moves_left;
 
+	tab = 0;
+	if (N < 3 || N > 6)
+		return (ft_error(tab));
 	if (!ft_parcer(argc, argv))
-		return (ft_error());
+		return (ft_error(tab));
 	tab = ft_init(argc, argv);
 	if (tab == 0)
-		return (ft_error());
-	moves_left = ft_obvious_case(tab);
-	if (moves_left == -1)
-		return (ft_error());
+		return (ft_error(tab));
+	if (!ft_is_case_solvable(tab))
+		return (ft_error(tab));
+	moves_left = N * N;
 	if (ft_solve(tab, moves_left))
 	{
 		ft_putsol(tab);
+		free(tab);
 		return (0);
 	}
-	return (ft_error());
+	return (ft_error(tab));
 }

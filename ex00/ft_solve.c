@@ -10,19 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft.h"
 
-int		ft_is_move_valid(char **tab, int i, int j, int value)
+int		ft_check_double(char **tab, int i, int j, int value)
 {
-	int	res;
-	int	x;
-	int	y;
+	int res;
+	int y;
+	int x;
 	int count;
 
-	if (tab[i][j] != 0 || value <= 0 || value > N ||
-		i <= 0 || i >= N + 1 || j <= 0 || j >= N + 1)
-		return (0);
-	tab[i][j] = value;
 	res = 1;
 	y = 0;
 	count = 0;
@@ -42,6 +38,18 @@ int		ft_is_move_valid(char **tab, int i, int j, int value)
 		if (count > 1)
 			res = 0;
 	}
+	return (res);
+}
+
+int		ft_is_move_valid(char **tab, int i, int j, int value)
+{
+	int	res;
+
+	if (tab[i][j] != 0 || value <= 0 || value > N ||
+		i <= 0 || i >= N + 1 || j <= 0 || j >= N + 1)
+		return (0);
+	tab[i][j] = value;
+	res = ft_check_double(tab, i, j, value);
 	tab[i][j] = 0;
 	return (res);
 }

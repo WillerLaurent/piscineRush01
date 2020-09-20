@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft.h"
 
 int		ft_count_colup(char **tab, int j)
 {

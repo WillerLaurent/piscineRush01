@@ -10,17 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft.h"
 
 int	ft_isspace(char c)
 {
 	return ((c == '\n') || (c == '\r') || (c == '\t') ||
 			(c == '\v') || (c == '\f') || (c == ' '));
-}
-
-int	ft_is_numeric(char c)
-{
-	return ((c >= '0') && (c <= '9'));
 }
 
 int	ft_atoi(char *str)
