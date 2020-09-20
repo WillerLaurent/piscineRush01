@@ -6,7 +6,7 @@
 /*   By: cmasse <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/19 16:16:46 by cmasse            #+#    #+#             */
-/*   Updated: 2020/09/19 23:18:41 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 13:42:31 by cmasse           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_obvious_case_rowleft(char **tab)
 
 	i = 0;
 	y = 1;
-	while (y < N + 1)
+	while (y < N  + 1)
 	{
 		if (tab[y][i] == N)
 		{
@@ -35,6 +35,8 @@ void	ft_obvious_case_rowleft(char **tab)
 		i = 0;
 		if (tab[y][i] == 1 && tab[y][i + 1] == 0)
 			tab[y][i + 1] = N;
+		if ((tab[y][i] == 1 && tab[y][N + 1] == 2) && tab[y][N] == 0)
+			tab[y][N] = N - 1;
 		y++;
 	}
 }
@@ -46,7 +48,7 @@ void	ft_obvious_case_colup(char **tab)
 
 	i = 1;
 	y = 0;
-	while (i < N - 1)
+	while (i < N + 1)
 	{
 		if (tab[y][i] == N)
 		{
@@ -61,7 +63,9 @@ void	ft_obvious_case_colup(char **tab)
 		}
 		y = 0;
 		if (tab[y][i] == 1 && tab[y + 1][i] == 0)
-			tab[y + 1][i] = N;
+			tab[y + 1][i] = N - 1;
+		if ((tab[y][i] == 1 && tab[N + 1][i] == 2) && tab[N][i] == 0)
+			tab[N][i] = N - 1;
 		i++;
 	}
 }
@@ -73,7 +77,7 @@ void	ft_obvious_case_rowright(char **tab)
 
 	i = N + 1;
 	y = 1;
-	while (y < N - 1)
+	while (y < N + 1)
 	{
 		if (tab[y][i] == N)
 		{
@@ -89,6 +93,8 @@ void	ft_obvious_case_rowright(char **tab)
 		i = N + 1;
 		if ((tab[y][i] == 1) && tab[y][i - 1] == 0)
 			tab[y][i - 1] = N;
+		if ((tab[y][i] == 1 && tab[y][N - 4] == 2) && tab[y][N - 3] == 0)
+			tab[y][N - 3] = N - 1;
 		y++;
 	}
 }
@@ -100,7 +106,7 @@ void	ft_obvious_case_coldown(char **tab)
 
 	i = 1;
 	y = N + 1;
-	while (i < N - 1)
+	while (i < N)
 	{
 		if (tab[y][i] == N)
 		{
@@ -116,6 +122,9 @@ void	ft_obvious_case_coldown(char **tab)
 		y = N + 1;
 		if (tab[y][i] == 1 && tab[y - 1][i] == 0)
 			tab[y - 1][i] = N;
+		if ((tab[y][i] == 1 && tab[N - 4][i] == 2) && tab[N - 3][i] == 0)
+			tab[N - 3][i] = N - 1;
+
 		i++;
 	}
 }
