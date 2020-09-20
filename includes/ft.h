@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define N 4
+# define N 7
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);

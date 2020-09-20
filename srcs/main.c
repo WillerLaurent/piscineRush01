@@ -13,11 +13,15 @@
 #include "../includes/ft.h"
 
 /*
+** SOLVABLE 7*7 GRID
+** "2 3 3 4 4 2 1 3 3 1 3 3 2 2 5 1 2 3 3 5 2 1 6 4 4 2 2 2"
+**
 ** SOLVABLE 5*5 GRID :
 ** "4 2 1 2 3 1 4 3 2 2 3 2 3 2 1 3 4 1 2 2"
 **
 ** SOLVABLE 4*4 GRID
 ** "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
+** "1 2 4 2 3 2 1 3 1 2 2 3 2 1 3 2"
 */
 
 int	main(int argc, char **argv)
@@ -49,7 +53,7 @@ int	main(int argc, char **argv)
 	ft_putsol(tab);
 	printf("\n");
 
-/*	if (!moves_left)
+	if (!moves_left)
 	{
 		ft_putsol(tab);
 		return (0);
@@ -58,10 +62,11 @@ int	main(int argc, char **argv)
 	printf("===== SOLVE =====\n\n");
 	if (ft_solve(tab, moves_left))
 	{
+		ft_putstr("TOURNEE GENERALE EN Z1 VENEZ LES REUFS !!!\n");
 		ft_putsol(tab);
 		return (0);
 	}
 	ft_putstr("Error : grid is not solvable\n");
 
-	return (-1);*/
+	return (-1);
 }

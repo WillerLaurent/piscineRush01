@@ -63,10 +63,10 @@ int		ft_is_solution(char **tab)
 	while (res && ++i <= N)
 	{
 		res = res &&
-			((ft_count_rowleft(tab, i) <= tab[i][0]) &&
-			(ft_count_rowright(tab, i) <= tab[i][N + 1]) &&
-			(ft_count_colup(tab, i) <= tab[0][i]) &&
-			(ft_count_coldown(tab, i) <= tab[N + 1][i]));
+			((ft_count_rowleft(tab, i) == tab[i][0]) &&
+			(ft_count_rowright(tab, i) == tab[i][N + 1]) &&
+			(ft_count_colup(tab, i) == tab[0][i]) &&
+			(ft_count_coldown(tab, i) == tab[N + 1][i]));
 	}
 	return (res);
 }
@@ -103,7 +103,10 @@ int		ft_solve(char **tab, int move_left)
 	//printf("\n\n");
 	//ft_putsol(tab);
 	if (move_left == 0)
+	{
+//		printf("is_sol = %d\n", ft_is_solution(tab));
 		return (ft_is_solution(tab));
+	}
 	ft_next_empty_space(tab, &i, &j);
 //	printf("(i, j) = (%d, %d)\n", i, j);
 	next_move = 0;
