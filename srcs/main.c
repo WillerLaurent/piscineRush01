@@ -35,17 +35,19 @@ int	main(int argc, char **argv)
 	char	**tab;
 	int		moves_left;
 
-		if (!ft_parcer(argc, argv))
+	if (!ft_parcer(argc, argv))
 	{
 		ft_putstr("Error");
 		return (-1);
 	}
+
 	tab = ft_init(argc, argv);
 	if (tab == 0)
 	{
 		ft_putstr("Error\n");
 		return (-1);
 	}
+
 
 	moves_left = ft_obvious_case(tab);
 	if (moves_left == -1)
@@ -54,11 +56,13 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 
+
 	if (ft_solve(tab, moves_left))
 	{
 		ft_putsol(tab);
 		return (0);
 	}
+
 	ft_putstr("Error\n");
 	return (-1);
 }

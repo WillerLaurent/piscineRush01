@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define N 7
+# define N 4
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -32,5 +32,6 @@ int		ft_count_coldown(char **tab, int j);
 int		ft_count_colup(char **tab, int j);
 void	ft_putsol(char **tab);
 int		ft_parcer(int argc, char **argv);
+int		ft_is_numeric(char c);
 
 #endif

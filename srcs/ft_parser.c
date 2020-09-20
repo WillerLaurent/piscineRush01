@@ -20,12 +20,14 @@ int	ft_parcer(int argc, char **argv)
 
 	i = 0;
 	count = 0;
-	if (argc != 1)
+	if (argc != 2)
 		return (0);
-	while (argv[1] + i)
+	while (argv[1][i])
 	{
 		if (argv[1][i] == ' ')
 			i++;
+		if (!ft_is_numeric(argv[1][i]))
+			return (0);
 		nb = ft_atoi(argv[1] + i);
 		if (nb < 1 || nb > N)
 			return (0);
@@ -34,8 +36,6 @@ int	ft_parcer(int argc, char **argv)
 		i++;
 	}
 	if (count % 4 != 0)
-	{
 		return (0);
-	}
 	return (1);
 }
