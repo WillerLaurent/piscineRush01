@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putsol.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmasse <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/09/20 18:01:54 by cmasse            #+#    #+#             */
+/*   Updated: 2020/09/20 18:03:33 by cmasse           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft.h"
 
 void	ft_putsol(char **tab)
@@ -12,7 +24,6 @@ void	ft_putsol(char **tab)
 		while (j < N + 2)
 		{
 			ft_putchar(tab[i][j] + '0');
-			//printf("%d\n", tab[i][j]);
 			if (j != N + 1)
 				ft_putchar(' ');
 			j++;
@@ -35,7 +46,6 @@ void	ft_putsol_def(char **tab)
 		while (j < N + 1)
 		{
 			ft_putchar(tab[i][j] + '0');
-			//printf("%d\n", tab[i][j]);
 			if (j != N)
 				ft_putchar(' ');
 			j++;
