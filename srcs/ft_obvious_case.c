@@ -20,7 +20,7 @@ void	ft_obvious_case_rowleft(char **tab)
 
 	i = 0;
 	y = 1;
-	while (y < N  + 1)
+	while (y < N + 1)
 	{
 		if (tab[y][i] == N)
 		{
@@ -64,7 +64,7 @@ void	ft_obvious_case_colup(char **tab)
 		}
 		y = 0;
 		if (tab[y][i] == 1 && tab[y + 1][i] == 0)
-			tab[y + 1][i] = N - 1;
+			tab[y + 1][i] = N;
 		if ((tab[y][i] == 1 && tab[N + 1][i] == 2) && tab[N][i] == 0)
 			tab[N][i] = N - 1;
 		i++;
@@ -75,7 +75,9 @@ void	ft_obvious_case_rowright(char **tab)
 {
 	int		i;
 	int		y;
+	int		a;
 
+	a = 1;
 	i = N + 1;
 	y = 1;
 	while (y < N + 1)
@@ -87,15 +89,16 @@ void	ft_obvious_case_rowright(char **tab)
 				while (tab[y][i - 1] != 0 && i > 1)
 					i--;
 				if (i > 1)
-					tab[y][i - 1] = i - 1;
+					tab[y][i - 1] = a + 1;
+				a++;
 				i--;
 			}
 		}
 		i = N + 1;
 		if ((tab[y][i] == 1) && tab[y][i - 1] == 0)
 			tab[y][i - 1] = N;
-		if ((tab[y][i] == 1 && tab[y][N - 4] == 2) && tab[y][N - 3] == 0)
-			tab[y][N - 3] = N - 1;
+		if ((tab[y][i] == 1 && tab[y][0] == 2) && tab[y][1] == 0)
+			tab[y][1] = N - 1;
 		y++;
 	}
 }
@@ -104,7 +107,9 @@ void	ft_obvious_case_coldown(char **tab)
 {
 	int		i;
 	int		y;
+	int		a;
 
+	a = 1;
 	i = 1;
 	y = N + 1;
 	while (i < N)
@@ -116,15 +121,16 @@ void	ft_obvious_case_coldown(char **tab)
 				while (tab[y - 1][i] != 0 && y > 1)
 					y--;
 				if (y > 1)
-					tab[y - 1][i] = y - 1;
+					tab[y - 1][i] = a + 1;
 				y--;
+				a++;
 			}
 		}
 		y = N + 1;
 		if (tab[y][i] == 1 && tab[y - 1][i] == 0)
 			tab[y - 1][i] = N;
-		if ((tab[y][i] == 1 && tab[N - 4][i] == 2) && tab[N - 3][i] == 0)
-			tab[N - 3][i] = N - 1;
+		if ((tab[y][i] == 1 && tab[0][i] == 2) && tab[1][i] == 0)
+			tab[1][i] = N - 1;
 
 		i++;
 	}

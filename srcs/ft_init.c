@@ -101,7 +101,6 @@ char	**ft_init(int argc, char **argv)
 {
 	char	**tab;
 	int		x;
-//	int		y;
 	int		count;
 
 	if (argc != 2)
