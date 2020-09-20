@@ -6,7 +6,7 @@
 /*   By: lwiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/19 16:29:06 by lwiller           #+#    #+#             */
-/*   Updated: 2020/09/20 15:34:55 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 18:10:56 by lwiller          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	ft_check_input(char *str)
 	int nb;
 
 	nb = ft_atoi(str);
-	if (nb <= 0 || nb > N)
-		ft_putstr("Error");
 	return (nb);
 }
 
