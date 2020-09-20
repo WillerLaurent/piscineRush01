@@ -6,7 +6,7 @@
 /*   By: cmasse <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/19 16:16:46 by cmasse            #+#    #+#             */
-/*   Updated: 2020/09/20 16:11:14 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 17:10:00 by cmasse           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,33 +133,4 @@ void	ft_obvious_case_coldown(char **tab)
 
 		i++;
 	}
-}
-
-int		ft_obvious_case(char **tab)
-{
-	int		a;
-	int		i;
-	int		y;
-
-	i = 1;
-	y = 1;
-	a = 0;
-	if (!ft_is_case_solvable(tab))
-		return (-1);
-	ft_obvious_case_coldown(tab);
-	ft_obvious_case_colup(tab);
-	ft_obvious_case_rowleft(tab);
-	ft_obvious_case_rowright(tab);
-	while (y < N + 1)
-	{
-		i = 1;
-		while (i < N + 1)
-		{
-			if (tab[y][i] == 0)
-				a++;
-			i++;
-		}
-		y++;
-	}
-	return (a);
 }
