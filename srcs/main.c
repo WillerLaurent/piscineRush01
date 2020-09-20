@@ -39,27 +39,12 @@ int	main(int argc, char **argv)
 		ft_putstr("Error\n");
 		return (-1);
 	}
-	printf("===== OBVIOUS_CASE =====\n\n");
 
-	moves_left = ft_obvious_case(tab);
-	printf("moves_left = %d\n", moves_left);
-	if (moves_left == -1)
-	{
-		ft_putstr("Error : grid is not solvable (sum of opposit values of raw");
-		ft_putstr(" and column is not between 3 and ");
-		ft_putnbr(N + 1);
-		ft_putstr("\n");
-	}
-	ft_putsol(tab);
-	printf("\n");
-
-	if (!moves_left)
-	{
-		ft_putsol(tab);
-		return (0);
-	}
+	if (!ft_is_case_solvable(tab))
+		return (-1);
 
 	printf("===== SOLVE =====\n\n");
+	moves_left = N * N;
 	if (ft_solve(tab, moves_left))
 	{
 		ft_putstr("TOURNEE GENERALE EN Z1 VENEZ LES REUFS !!!\n");

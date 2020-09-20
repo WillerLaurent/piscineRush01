@@ -24,7 +24,6 @@ LIBFILES = $(addprefix $(SRCSDIR),\
 		ft_putstr.c \
 		ft_atoi.c \
 		ft_init.c \
-		ft_obvious_case.c \
 		ft_solve.c \
 		ft_count.c \
 		ft_putsol.c \
