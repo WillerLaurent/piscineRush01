@@ -6,14 +6,13 @@
 /*   By: gartaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:31:31 by gartaud           #+#    #+#             */
-/*   Updated: 2020/09/20 18:10:13 by lwiller          ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 21:49:23 by gartaud          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_H
 # define FT_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # define N 4
