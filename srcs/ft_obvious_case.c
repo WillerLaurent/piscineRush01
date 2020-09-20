@@ -6,7 +6,7 @@
 /*   By: cmasse <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/19 16:16:46 by cmasse            #+#    #+#             */
-/*   Updated: 2020/09/20 13:42:31 by cmasse           ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 16:11:14 by cmasse           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_obvious_case_colup(char **tab)
 		}
 		y = 0;
 		if (tab[y][i] == 1 && tab[y + 1][i] == 0)
-			tab[y + 1][i] = N - 1;
+			tab[y + 1][i] = N;
 		if ((tab[y][i] == 1 && tab[N + 1][i] == 2) && tab[N][i] == 0)
 			tab[N][i] = N - 1;
 		i++;
@@ -74,7 +74,9 @@ void	ft_obvious_case_rowright(char **tab)
 {
 	int		i;
 	int		y;
+	int		a;
 
+	a = 0;
 	i = N + 1;
 	y = 1;
 	while (y < N + 1)
@@ -86,7 +88,8 @@ void	ft_obvious_case_rowright(char **tab)
 				while (tab[y][i - 1] != 0 && i > 1)
 					i--;
 				if (i > 1)
-					tab[y][i - 1] = i - 1;
+					tab[y][i - 1] = a + 1;
+					a++;
 				i--;
 			}
 		}
@@ -103,7 +106,9 @@ void	ft_obvious_case_coldown(char **tab)
 {
 	int		i;
 	int		y;
+	int		a;
 
+	a = 0;
 	i = 1;
 	y = N + 1;
 	while (i < N)
@@ -115,7 +120,8 @@ void	ft_obvious_case_coldown(char **tab)
 				while (tab[y - 1][i] != 0 && y > 1)
 					y--;
 				if (y > 1)
-					tab[y - 1][i] = y - 1;
+					tab[y - 1][i] = a + 1;
+					a++;
 				y--;
 			}
 		}

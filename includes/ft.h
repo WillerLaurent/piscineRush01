@@ -6,7 +6,7 @@
 /*   By: gartaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:31:31 by gartaud           #+#    #+#             */
-/*   Updated: 2020/09/19 17:12:06 by lwiller          ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 15:40:47 by cmasse           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define N 5
+# define N 4
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);

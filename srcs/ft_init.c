@@ -6,7 +6,7 @@
 /*   By: lwiller <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/19 16:29:06 by lwiller           #+#    #+#             */
-/*   Updated: 2020/09/20 14:28:27 by lwiller          ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 15:34:55 by cmasse           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	**ft_init(int argc, char **argv)
 {
 	char	**tab;
 	int		x;
-	int		y;
+//	int		y;
 	int		count;
 
 	if (argc != 2)

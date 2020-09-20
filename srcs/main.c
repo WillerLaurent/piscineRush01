@@ -6,7 +6,7 @@
 /*   By: gartaud <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:34:11 by gartaud           #+#    #+#             */
-/*   Updated: 2020/09/15 16:37:36 by gartaud          ###   ########lyon.fr   */
+/*   Updated: 2020/09/20 15:52:15 by cmasse           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	ft_putsol(tab);
 	printf("\n");
 
-	if (!moves_left)
+/*	if (!moves_left)
 	{
 		ft_putsol(tab);
 		return (0);
@@ -63,5 +63,5 @@ int	main(int argc, char **argv)
 	}
 	ft_putstr("Error : grid is not solvable\n");
 
-	return (-1);
+	return (-1);*/
 }
